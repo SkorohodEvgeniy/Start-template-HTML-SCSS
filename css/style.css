@@ -226,4 +226,14 @@ body {
 /* @import '_tabs'; */
 /* @import '_list-counter'; */
 /*---Main SCSS---*/
+main {
+  text-align: center;
+}
+
+footer {
+  background-color: cornflowerblue;
+  color: #fff;
+  text-align: center;
+}
+
 /*---End main SCSS*//*# sourceMappingURL=style.css.map */
