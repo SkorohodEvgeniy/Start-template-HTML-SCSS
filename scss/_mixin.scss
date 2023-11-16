@@ -1,0 +1,57 @@
+/*--- !important - whithout px ---*/
+$container: 1484;
+
+
+.container {
+    max-width: $container + px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/*--Adaptiv Fonts--*/
+@mixin adaptiv-font($fontPcSize, $fontMobSize) {
+    $addSize: $fontPcSize - $fontMobSize;
+    $addMobSize: $addSize + $addSize * 0.7;
+
+    @media screen and (max-width:767px) {
+        font-size: calc(#{$fontMobSize + px} + #{$addMobSize} * ((100vw - 320px) / #{$container}));
+    }
+
+    @media screen and (min-width:767px) {
+        font-size: calc(#{$fontMobSize + px} + #{$addSize} * (100vw / #{$container}));
+    }
+}
+
+
+/*---Media Query---*/
+
+$breakpoints: (
+    "phone": 400px,
+    "phone-wide": 480px,
+    "phablet": 560px,
+    "tablet-small": 640px,
+    "tablet": 768px,
+    "tablet-wide": 1024px,
+    "desktop": 1248px,
+    "desktop-wide": $container + px
+);
+
+@mixin mq($width: tablet, $type: max) {
+    @if map_has_key($breakpoints, $width) {
+        $width: map_get($breakpoints, $width);
+
+        @if $type ==max {
+            $width: $width - 1px;
+        }
+
+        @media only screen and (#{$type}-width: $width) {
+            @content;
+        }
+    }
+
+    @else {
+        @media only screen and (#{$type}-width: $width + px) {
+            @content;
+        }
+    }
+}
