@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 /*--- !important - whithout px ---*/
 $container: 1484;
 
@@ -27,12 +29,8 @@ $container: 1484;
 
 $breakpoints: (
     "phone": 400px,
-    "phone-wide": 480px,
-    "phablet": 560px,
-    "tablet-small": 640px,
     "tablet": 768px,
-    "tablet-wide": 1024px,
-    "desktop": 1248px,
+    "desktop": 1024px,
     "desktop-wide": $container + px
 );
 
@@ -54,4 +52,11 @@ $breakpoints: (
             @content;
         }
     }
+}
+
+
+/*---  Function px -> rem  ---*/
+/*-  Print  width:toRem(20); -*/
+@function toRem($pxValue) {
+    @return math.div($pxValue, 16) * 1rem;
 }
