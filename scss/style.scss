@@ -1,4 +1,4 @@
-@import '_mixin';
+@import '_mixin+settings';
 @import '_reset';
 @import '_burger';
 /* @import '_accordion'; */
@@ -6,6 +6,27 @@
 /* @import '_list-counter'; */
 
 /*---Main SCSS---*/
+.container {
+    max-width: $container + px;
+    margin: 0 auto;
+    padding: 0;
+    @include adaptive-value("padding-left", 24, 14, 0);
+    @include adaptive-value("padding-right", 24, 14, 0);
+}
+
+html,
+body {
+    height: 100%;
+    /*Magic*/
+    line-height: $lineHeight;
+    font-family: $fontFamily;
+    font-weight: $fontWeight;
+    font-style: $fontStyle;
+    font-size: $fontSize;
+    background-color: $backgroundColor;
+    color: $color;
+}
+
 main {
     text-align: center;
 }
@@ -13,7 +34,7 @@ main {
 
 h1 {
     font-weight: 900;
-    @include adaptiv-font(40, 24);
+    @include adaptive-font(40, 24);
 
     &.test {
         font-size: clamp(1.5rem, 1.2251rem + 1.3746vw, 2.5rem);

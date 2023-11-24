@@ -1,12 +1,11 @@
+/*--- Settings basic template ---*/
 /*--- !important - whithout px ---*/
-.container {
-  max-width: 1484px;
-  margin: 0 auto;
-  padding: 0 24px;
-}
-
-/*--Adaptiv Fonts--*/
-/*---Media Query---*/
+/*---------------------------------------------------------------------------------------*/
+/***------------------------------ Start MIXIN templates ------------------------------***/
+/*---------------------------------------------------------------------------------------*/
+/*--- Mixin * @include adaptive-fonts(40, 24); *---*/
+/*--- Mixin * @nclude adaptive-value("padding", 40, 15, 0); *---*/
+/*--- Mixin Media Query * @include mq{} *---*/
 /*---  Function px -> rem  ---*/
 /*-  Print  width:toRem(20); -*/
 /*Reset*/
@@ -43,19 +42,6 @@ h5,
 h6 {
   font-weight: inherit;
   font-size: inherit;
-}
-
-html,
-body {
-  height: 100%;
-  /*Magic*/
-  line-height: 160%;
-  font-family: "Plus Jakarta Sans", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 1rem;
-  background-color: #fff;
-  color: #545971;
 }
 
 .wrapper {
@@ -231,6 +217,27 @@ body {
 /* @import '_tabs'; */
 /* @import '_list-counter'; */
 /*---Main SCSS---*/
+.container {
+  max-width: 1208px;
+  margin: 0 auto;
+  padding: 0;
+  padding-left: calc(14px + 10 * (100vw - 320px) / 1600);
+  padding-right: calc(14px + 10 * (100vw - 320px) / 1600);
+}
+
+html,
+body {
+  height: 100%;
+  /*Magic*/
+  line-height: 160%;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1rem;
+  background-color: #fff;
+  color: #545971;
+}
+
 main {
   text-align: center;
 }
@@ -240,12 +247,12 @@ h1 {
 }
 @media screen and (max-width: 767px) {
   h1 {
-    font-size: calc(24px + 27.2 * ((100vw - 320px) / 1484));
+    font-size: calc(24px + 27.2 * (100vw - 320px) / 1208);
   }
 }
 @media screen and (min-width: 767px) {
   h1 {
-    font-size: calc(24px + 16 * (100vw / 1484));
+    font-size: calc(24px + 16 * 100vw / 1208);
   }
 }
 h1.test {
