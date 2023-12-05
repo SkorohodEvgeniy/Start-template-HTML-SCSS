@@ -17,7 +17,7 @@ $container: 1208;
 /***------------------------------ Start MIXIN templates ------------------------------***/
 /*---------------------------------------------------------------------------------------*/
 
-/*--- Mixin * @include adaptive-fonts(40, 24); *---*/
+/*--- Mixin * @include adaptive-fonts(40, 24); * ---*/
 @mixin adaptive-font($fontPcSize, $fontMobSize) {
     $addSize: $fontPcSize - $fontMobSize;
     $addMobSize: $addSize + $addSize * 0.7;
@@ -31,7 +31,7 @@ $container: 1208;
     }
 }
 
-/*--- Mixin * @nclude adaptive-value("padding", 40, 15, 0); *---*/
+/*--- Mixin * @nclude adaptive-value("padding", 40, 15, 0); * ---*/
 @mixin adaptive-value($property, $startSize, $minSize, $type: 0) {
     $addSize: $startSize - $minSize;
 

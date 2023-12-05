@@ -3,8 +3,8 @@
 /*---------------------------------------------------------------------------------------*/
 /***------------------------------ Start MIXIN templates ------------------------------***/
 /*---------------------------------------------------------------------------------------*/
-/*--- Mixin * @include adaptive-fonts(40, 24); *---*/
-/*--- Mixin * @nclude adaptive-value("padding", 40, 15, 0); *---*/
+/*--- Mixin * @include adaptive-fonts(40, 24); * ---*/
+/*--- Mixin * @nclude adaptive-value("padding", 40, 15, 0); * ---*/
 /*--- Mixin Media Query * @include mq{} *---*/
 /*---  Function px -> rem  ---*/
 /*-  Print  width:toRem(20); -*/
