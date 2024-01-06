@@ -9,12 +9,13 @@ $(document).ready(function () {
 */
 
 /*------ Menu Burger JS ------*/
-let headerBurger = document.querySelector(".header__burger");
-let headerMenu = document.querySelector(".header__menu");
-let body = document.getElementsByTagName("body");
+const headerBurger = document.querySelector(".header__burger");
+const headerMenu = document.querySelector(".header__menu");
+const body = document.getElementsByTagName("body");
 
 function toggleBurgerMenu() {
-    headerBurger, headerMenu.classList.toggle("active");
+    headerBurger.classList.toggle("active");
+    headerMenu.classList.toggle("active");
     body.classList.toggle("lock");
 }
 
