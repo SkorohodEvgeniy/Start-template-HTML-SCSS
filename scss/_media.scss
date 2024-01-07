@@ -1,5 +1,5 @@
-@media screen and (max-width:1024px) {}
+@include mq(1024) {}
 
-@media screen and (max-width:768px) {}
+@include mq {}
 
-@media screen and (max-width:375px) {}
+@include mq(475) {}
