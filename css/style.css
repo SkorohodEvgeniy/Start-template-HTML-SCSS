@@ -28,6 +28,8 @@ ol {
 img {
   max-width: 100%;
   vertical-align: top;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 a {
@@ -117,11 +119,56 @@ h6 {
 }
 .header__list li {
   margin-left: 20px;
+  position: relative;
 }
 .header__list li a {
   color: #fff;
   text-transform: uppercase;
   font-size: 1rem;
+}
+.header__list li.menu-item-has-children::after {
+  content: "";
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' height='15px' viewBox='0 0 24 24' width='18px' fill='%23fff'><path d='M0 0h24v24H0z' fill='none'/><path d='M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  width: 15px;
+  height: 10px;
+  display: block;
+  position: absolute;
+  right: -25%;
+  top: 40%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.header__list li.menu-item-has-children .sub-menu {
+  position: absolute;
+  display: none;
+  top: 36px;
+  left: -50px;
+  background: #FFFFFF;
+  -webkit-box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.25);
+  min-width: 300px;
+  padding: 1em;
+  cursor: pointer;
+  -webkit-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
+}
+.header__list li.menu-item-has-children .sub-menu li {
+  position: relative;
+}
+.header__list li.menu-item-has-children .sub-menu li a {
+  color: #000;
+}
+.header__list li.menu-item-has-children .sub-menu li.show {
+  background: url(./assets/img/icon/arrow-menu-up.svg) 0 0 no-repeat;
+}
+.header__list li.menu-item-has-children.show .sub-menu {
+  display: inline-block;
+}
+.header__list li.menu-item-has-children.show:after {
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' height='18px' viewBox='0 0 24 24' width='18px' fill='%23FFFFFF'><path d='M0 0h24v24H0z' fill='none'/><path d='M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z'/></svg>");
 }
 .header__burger {
   display: none;
@@ -131,6 +178,11 @@ h6 {
   padding-top: 100px;
 }
 
+@media (min-width: 768px) {
+  .menu-item-has-children .sub-menu {
+    position: absolute;
+  }
+}
 @media (max-width: 768px) {
   body.lock {
     overflow: hidden;

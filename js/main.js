@@ -13,15 +13,19 @@ const headerBurger = document.querySelector(".header__burger");
 const headerMenu = document.querySelector(".header__menu");
 const body = document.getElementsByTagName("body");
 
-function toggleBurgerMenu() {
+headerBurger.addEventListener("click", toggleBurgerMenu = () => {
     headerBurger.classList.toggle("active");
     headerMenu.classList.toggle("active");
     body.classList.toggle("lock");
-}
+});
 
-headerBurger.addEventListener("click", toggleBurgerMenu);
+/*---Arrow Menu---*/
+const arrow = document.querySelector(".menu-item-has-children");
+arrow.addEventListener("click", arrowClick = () => {
+    arrow.classList.toggle("show");
+});
 
-/* ----- Accordion 1-vershion
+/* ----- Accordion 1ver
 $(document).ready(function () {
     $(".accordion__title").click(function (event) {
         if ($(".accordion").hasClass("one")) {
@@ -31,9 +35,8 @@ $(document).ready(function () {
         $(this).toggleClass("active").next().slideToggle(300);
     });
 });
-
-
-   // accordion 2ver.
+*/
+/* ----- Accordion 2ver
    (function () {
     var initAccordion = function (itemsClass, headerClass, bodyClass) {
         var $items = $(itemsClass);
